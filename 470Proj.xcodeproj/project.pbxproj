@@ -14,12 +14,12 @@
 		354ACD9F1ACB5CA900F52C24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354ACD9E1ACB5CA900F52C24 /* Images.xcassets */; };
 		354ACDA21ACB5CA900F52C24 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354ACDA01ACB5CA900F52C24 /* LaunchScreen.xib */; };
 		354ACDAE1ACB5CA900F52C24 /* _70ProjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 354ACDAD1ACB5CA900F52C24 /* _70ProjTests.m */; };
-		354ACDFF1ACB769500F52C24 /* ship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 354ACDFE1ACB769500F52C24 /* ship1.png */; };
-		354ACE011ACB7BCA00F52C24 /* shipexpl1.png in Resources */ = {isa = PBXBuildFile; fileRef = 354ACE001ACB7BCA00F52C24 /* shipexpl1.png */; };
 		359560401AD352F400667378 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 3595603F1AD352F400667378 /* Game.m */; };
 		359560421AD3532400667378 /* enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 359560411AD3532400667378 /* enemy.m */; };
 		3599FE451ACCC37A00437E2A /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 3599FE441ACCC37A00437E2A /* earth.png */; };
 		3599FE471ACCC38F00437E2A /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3599FE461ACCC38F00437E2A /* background.png */; };
+		3F1DA0861AD3570100A75EDB /* ship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DA0841AD3570100A75EDB /* ship1.png */; };
+		3F1DA0871AD3570100A75EDB /* shipexpl1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DA0851AD3570100A75EDB /* shipexpl1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,14 +46,14 @@
 		354ACDA71ACB5CA900F52C24 /* 470ProjTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 470ProjTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		354ACDAC1ACB5CA900F52C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		354ACDAD1ACB5CA900F52C24 /* _70ProjTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _70ProjTests.m; sourceTree = "<group>"; };
-		354ACDFE1ACB769500F52C24 /* ship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship1.png; path = ../../artassets/ship1.png; sourceTree = "<group>"; };
-		354ACE001ACB7BCA00F52C24 /* shipexpl1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shipexpl1.png; path = ../../artassets/shipexpl1.png; sourceTree = "<group>"; };
 		3595603E1AD3522F00667378 /* enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enemy.h; sourceTree = "<group>"; };
 		3595603F1AD352F400667378 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		359560411AD3532400667378 /* enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = enemy.m; sourceTree = "<group>"; };
 		359560431AD3533F00667378 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		3599FE441ACCC37A00437E2A /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth.png; sourceTree = "<group>"; };
 		3599FE461ACCC38F00437E2A /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		3F1DA0841AD3570100A75EDB /* ship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship1.png; sourceTree = "<group>"; };
+		3F1DA0851AD3570100A75EDB /* shipexpl1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipexpl1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +114,10 @@
 		354ACD911ACB5CA900F52C24 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F1DA0841AD3570100A75EDB /* ship1.png */,
+				3F1DA0851AD3570100A75EDB /* shipexpl1.png */,
 				3599FE461ACCC38F00437E2A /* background.png */,
 				3599FE441ACCC37A00437E2A /* earth.png */,
-				354ACDFE1ACB769500F52C24 /* ship1.png */,
-				354ACE001ACB7BCA00F52C24 /* shipexpl1.png */,
 				354ACD921ACB5CA900F52C24 /* Info.plist */,
 				354ACD931ACB5CA900F52C24 /* main.m */,
 			);
@@ -221,11 +221,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1DA0871AD3570100A75EDB /* shipexpl1.png in Resources */,
 				3599FE451ACCC37A00437E2A /* earth.png in Resources */,
+				3F1DA0861AD3570100A75EDB /* ship1.png in Resources */,
 				3599FE471ACCC38F00437E2A /* background.png in Resources */,
-				354ACE011ACB7BCA00F52C24 /* shipexpl1.png in Resources */,
 				354ACD9D1ACB5CA900F52C24 /* Main.storyboard in Resources */,
-				354ACDFF1ACB769500F52C24 /* ship1.png in Resources */,
 				354ACDA21ACB5CA900F52C24 /* LaunchScreen.xib in Resources */,
 				354ACD9F1ACB5CA900F52C24 /* Images.xcassets in Resources */,
 			);
