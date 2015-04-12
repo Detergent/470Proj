@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "Game.h"
 #import "enemy.h"
+#import "shooter.h"
 
 @interface Game() {
     
 }
 
-@property (nonatomic) NSMutableArray * enemies;
+@property (nonatomic) NSMutableArray * enemyArr;
 
 @end
 
@@ -28,16 +29,35 @@
     
 }
 
--(NSMutableArray *) startEnemies
+-(enemy *) startEnemies
 {
     enemy *e1 = [[enemy alloc] initEnemy];
     
-    NSMutableArray *r = [NSMutableArray arrayWithObjects: e1, nil];
-    return r;
+    //NSMutableArray *r = [NSMutableArray arrayWithObjects: e1, nil];
+    return e1;
 }
 
 -(NSMutableArray *) enemies
 {
-    return self.enemies;
+    return self.enemyArr;
 }
+
+-(enemy *) returnEnemyAtIndex: (int) ind
+{
+    return [self.enemyArr objectAtIndex: ind];
+}
+
+-(shooter *) startShooter: (int) a and: (int) b
+{
+    shooter * s = [[shooter alloc] initShooter:a and:b];
+    return s;
+    
+}
+
+
+
+
+
+
+
 @end

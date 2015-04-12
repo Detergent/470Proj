@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "enemy.h"
+#import "shooter.h"
 
 
 @interface Game : NSObject
@@ -15,6 +17,8 @@
 -(NSMutableArray *) enemies;
 
 -(id) initGame;
--(NSMutableArray *) startEnemies;
+-(enemy *) startEnemies;
+-(enemy *) returnEnemyAtIndex: (int) ind;
+-(shooter *) startShooter: (int) a and: (int) b;
 
 @end

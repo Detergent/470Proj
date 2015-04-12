@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35217E691AD72523008A5EB6 /* shooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 35217E681AD72523008A5EB6 /* shooter.m */; };
 		354ACD941ACB5CA900F52C24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 354ACD931ACB5CA900F52C24 /* main.m */; };
 		354ACD971ACB5CA900F52C24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 354ACD961ACB5CA900F52C24 /* AppDelegate.m */; };
 		354ACD9A1ACB5CA900F52C24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 354ACD991ACB5CA900F52C24 /* ViewController.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35217E671AD72514008A5EB6 /* shooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shooter.h; sourceTree = "<group>"; };
+		35217E681AD72523008A5EB6 /* shooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shooter.m; sourceTree = "<group>"; };
 		354ACD8E1ACB5CA900F52C24 /* 470Proj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 470Proj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		354ACD921ACB5CA900F52C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		354ACD931ACB5CA900F52C24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 				354ACD961ACB5CA900F52C24 /* AppDelegate.m */,
 				354ACD981ACB5CA900F52C24 /* ViewController.h */,
 				354ACD991ACB5CA900F52C24 /* ViewController.m */,
+				35217E671AD72514008A5EB6 /* shooter.h */,
+				35217E681AD72523008A5EB6 /* shooter.m */,
 				354ACD9B1ACB5CA900F52C24 /* Main.storyboard */,
 				354ACD9E1ACB5CA900F52C24 /* Images.xcassets */,
 				354ACDA01ACB5CA900F52C24 /* LaunchScreen.xib */,
@@ -249,6 +254,7 @@
 				359560401AD352F400667378 /* Game.m in Sources */,
 				354ACD9A1ACB5CA900F52C24 /* ViewController.m in Sources */,
 				354ACD971ACB5CA900F52C24 /* AppDelegate.m in Sources */,
+				35217E691AD72523008A5EB6 /* shooter.m in Sources */,
 				354ACD941ACB5CA900F52C24 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

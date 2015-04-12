@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "enemy.h"
-#import "ViewController.h"
+//#import "ViewController.h"
 
 @interface enemy() {
     int position;
@@ -20,7 +20,7 @@
 @implementation enemy
 
 -(id) initEnemy {
-    position = (arc4random() % 280) + 20;
+    position = (arc4random() % 230) + 60;
     
     
     if( (self = [super init]) == nil )
