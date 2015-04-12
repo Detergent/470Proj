@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "TitleView.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    TitleView *tvc = [[TitleView alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:tvc];
+    nvc.navigationBarHidden=YES;
+    [self.window setRootViewController:nvc];
     return YES;
 }
 

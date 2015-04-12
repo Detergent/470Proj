@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "enemy.h"
 #import "Game.h"
+#import "EndGameView.h"
 
 @interface ViewController () {
     float SPEED;
@@ -64,7 +65,7 @@
 -(void) drawEnemies: (enemy *) e
 {
         int p = e.position;
-        UIImage *enemy1 = [UIImage imageNamed:@"shipexpl1"];
+        UIImage *enemy1 = [UIImage imageNamed:@"asteroid1"];
         UIImageView *en1 = [[UIImageView alloc] initWithFrame:CGRectMake( p, 0, 20, 20)];
         [en1 setImage:enemy1];
         [self.view addSubview:en1];
@@ -121,7 +122,11 @@
             NSLog(@"end game");
             [self.enemiesOnScreen removeObject:temp];
             [temp removeFromSuperview];
+            /* This will animate the end animation, but we need to see about resetting the game logic or "end game" repeats
+            EndGameView *endView = [[EndGameView alloc] init];
+            [self.navigationController pushViewController:endView animated:YES]; */
             return true;
+            
         }
     }
     return false;
