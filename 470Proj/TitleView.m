@@ -65,10 +65,8 @@
     [self.endButton addTarget:self action:@selector(pressedEnd) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.endButton];
     
-    
 }
 
-//I need to actually loop this properly... It doesn't appear to keep looping as it does in ViewController
 -(void) moveBackground: (UIImageView *) v1 and: (UIImageView *) v2
 {
     
@@ -77,8 +75,8 @@
     else if (v2.frame.origin.y == 0)
         v1.frame = CGRectMake( 0 , -700 , v1.frame.size.width, v1.frame.size.height);
     
-    CGPoint labelPosition1 = CGPointMake(v1.frame.origin.x, v1.frame.origin.y + 3);
-    CGPoint labelPosition2 = CGPointMake(v2.frame.origin.x, v2.frame.origin.y + 3);
+    CGPoint labelPosition1 = CGPointMake(v1.frame.origin.x, v1.frame.origin.y + 3.5);
+    CGPoint labelPosition2 = CGPointMake(v2.frame.origin.x, v2.frame.origin.y + 3.5);
     [UIView animateWithDuration: 0.1 animations:^{
         v1.frame = CGRectMake( labelPosition1.x , labelPosition1.y , v1.frame.size.width, v1.frame.size.height);
         

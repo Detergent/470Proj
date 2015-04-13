@@ -22,16 +22,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //I'm definitely going to need to add more in-between frames to keep it from looking so cheesey... There
-    //are also a few frames that need to have the background white cleaned up
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"background"];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, 400, 700)];
+    [backgroundView setImage:backgroundImage];
+    [self.view addSubview:backgroundView];
+    
     self.images = [NSArray arrayWithObjects:[UIImage imageNamed:@"earth_destr0"], [UIImage imageNamed:@"earth_destr0"],
-                   [UIImage imageNamed:@"earth_destr1"], [UIImage imageNamed:@"earth_destr2"], [UIImage imageNamed:@"earth_destr3"], [UIImage imageNamed:@"earth_destr4"], [UIImage imageNamed:@"earth_destr5"], [UIImage imageNamed:@"earth_destr6"], [UIImage imageNamed:@"earth_destr7"], [UIImage imageNamed:@"earth_destr8"], [UIImage imageNamed:@"earth_destr9"], [UIImage imageNamed:@"earth_destra"], nil];
+                   [UIImage imageNamed:@"earth_destr1"], [UIImage imageNamed:@"earth_destr2"], [UIImage imageNamed:@"earth_destr3"], [UIImage imageNamed:@"earth_destr4"], [UIImage imageNamed:@"earth_destr5"], [UIImage imageNamed:@"earth_destr6"], [UIImage imageNamed:@"earth_destr7"], [UIImage imageNamed:@"earth_destr8"], [UIImage imageNamed:@"earth_destr9"], [UIImage imageNamed:@"earth_destra"], [UIImage imageNamed:@"earth_destrb"], [UIImage imageNamed:@"earth_destrc"], [UIImage imageNamed:@"earth_destrd"], [UIImage imageNamed:@"earth_destre"], [UIImage imageNamed:@"earth_destrf"], [UIImage imageNamed:@"earth_destrg"], nil];
     
     UIImageView *animView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, 400, 700)];
     animView.animationImages=self.images;
     animView.animationDuration=2;
     animView.animationRepeatCount=1;
     [animView startAnimating];
+    
     
     [self.view addSubview:animView];
     [self performSelector:@selector(animFinished) withObject:nil

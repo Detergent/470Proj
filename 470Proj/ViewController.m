@@ -46,7 +46,7 @@
     [self moveBackground:v1 and:v2];
     
     
-    UIImage *earth = [UIImage imageNamed:@"earth"];
+    UIImage *earth = [UIImage imageNamed:@"myearth"];
     UIImageView *e = [[UIImageView alloc] initWithFrame:CGRectMake( -10, 400, 400, 400)];
     [e setImage:earth];
     [self.view addSubview:e];
@@ -65,7 +65,7 @@
 -(void) drawEnemies: (enemy *) e
 {
         int p = e.position;
-        UIImage *enemy1 = [UIImage imageNamed:@"asteroid1"];
+        UIImage *enemy1 = [UIImage imageNamed:@"enemyship"];
         UIImageView *en1 = [[UIImageView alloc] initWithFrame:CGRectMake( p, 0, 20, 20)];
         [en1 setImage:enemy1];
         [self.view addSubview:en1];
@@ -122,9 +122,10 @@
             NSLog(@"end game");
             [self.enemiesOnScreen removeObject:temp];
             [temp removeFromSuperview];
-            /* This will animate the end animation, but we need to see about resetting the game logic or "end game" repeats
+            /*This is how we can call the end game animation, but currently we need to look into stopping the game
+            as end game is continuously triggered even in another view (strong vs weak?)
             EndGameView *endView = [[EndGameView alloc] init];
-            [self.navigationController pushViewController:endView animated:YES]; */
+            [self.navigationController pushViewController:endView animated:YES];*/
             return true;
             
         }
