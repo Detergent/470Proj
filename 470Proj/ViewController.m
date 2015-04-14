@@ -13,6 +13,7 @@
 
 @interface ViewController () {
     float SPEED;
+    bool END;
     
 }
 
@@ -32,7 +33,8 @@
     [self.view addGestureRecognizer:tapHandler];
     self.enemiesOnScreen = [[NSMutableArray alloc] init];
     self.game = [[Game alloc] initGame];
-    SPEED = 0.02;
+    SPEED = 0.015;
+    END = false;
     UIImage *bk1 = [UIImage imageNamed:@"background"];
     UIImageView *v1 = [[UIImageView alloc] initWithFrame: CGRectMake(0, -700, 400, 700)];
     [v1 setImage: bk1];
@@ -62,39 +64,56 @@
 }
 
  
--(void) drawEnemies: (enemy *) e
+-(void) drawEnemies: (enemy *) enemyObject
 {
-        int p = e.position;
-        UIImage *enemy1 = [UIImage imageNamed:@"enemyship"];
-        UIImageView *en1 = [[UIImageView alloc] initWithFrame:CGRectMake( p, 0, 20, 20)];
-        [en1 setImage:enemy1];
-        [self.view addSubview:en1];
-        
+        int p = enemyObject.position;
+        UIImage *enemyImg = [UIImage imageNamed:@"enemyship"];
+        UIImageView *enemyVw = [[UIImageView alloc] initWithFrame:CGRectMake( p, 0, 50, 50)];
+        [enemyVw setImage:enemyImg];
+        [self.view addSubview:enemyVw];
         //add enemy to enemiesOnScreen
-        [self.enemiesOnScreen addObject:en1];
-        [self animateEnemy:en1];
+        [self.enemiesOnScreen addObject:enemyVw];
+        [self createEnemy:enemyVw];
     
 }
 
--(void) animateEnemy: (UIImageView *) e
+-(void) createEnemy: (UIImageView *) enemyVw
 {
-    [self animate: e];
+    [self animateEnemy: enemyVw];
     [UIView animateWithDuration: 3 animations:^{
-        [e setAlpha: 0.9];
+        [enemyVw setAlpha: 0.9];
     }
     completion:^(BOOL finished) {
+        if (END == true)
+            return;
         [self drawEnemies:[self.game startEnemies]];
         
     }];
     
 }
 
--(void) animate: (UIImageView *) view
+-(void) endGame
 {
-    if (view.frame.origin.y >= 700) {
+    NSInteger size = [self.enemiesOnScreen count];
+    for (int i = 0; i < size; i++)
+        [[self.enemiesOnScreen objectAtIndex:i] removeFromSuperview];
+    [self.enemiesOnScreen removeAllObjects];
+    END = true;
+    [self.ship removeFromSuperview];
+    self.game = nil;
+    EndGameView *endView = [[EndGameView alloc] init];
+    [self.navigationController pushViewController:endView animated:YES];}
+
+-(void) animateEnemy: (UIImageView *) view
+{
+    if (END == true)
+        return;
+    if (![self.view.subviews containsObject:view])
+        return;
+    else if (view.frame.origin.y >= 700) {
         [view removeFromSuperview];
         [self.enemiesOnScreen removeObject: view];
-        NSLog(@"end game");
+        [self endGame];
         return;
     }
     CGPoint labelPosition = CGPointMake(view.frame.origin.x, view.frame.origin.y + 10);
@@ -102,7 +121,7 @@
         view.frame = CGRectMake( labelPosition.x , labelPosition.y , view.frame.size.width, view.frame.size.height);
     }
     completion:^(BOOL finished) {
-        [self animate:view];
+        [self animateEnemy:view];
     }];
 }
 
@@ -117,15 +136,9 @@
         temp = [self.enemiesOnScreen objectAtIndex:i];
         tempPositionX = temp.frame.origin.x;
         tempPositionY = temp.frame.origin.y;
-        //change based on image
         if (tempPositionX >= x + 10 && tempPositionX <= x + 100 && tempPositionY >= y + 10 && tempPositionY <= y + 100) {
-            NSLog(@"end game");
             [self.enemiesOnScreen removeObject:temp];
             [temp removeFromSuperview];
-            /*This is how we can call the end game animation, but currently we need to look into stopping the game
-            as end game is continuously triggered even in another view (strong vs weak?)
-            EndGameView *endView = [[EndGameView alloc] init];
-            [self.navigationController pushViewController:endView animated:YES];*/
             return true;
             
         }
@@ -139,12 +152,12 @@
         int x = self.ship.frame.origin.x + 50;
         int y = self.ship.frame.origin.y;
         shooter * s = [self.game startShooter:x and:y];
-        [self animateShooter: s];
+        [self drawShooter: s];
     }
     
 }
 
--(void) animateShooter: (shooter *) s
+-(void) drawShooter: (shooter *) s
 {
     int x = s.xCoord;
     int y = s.yCoord;
@@ -153,10 +166,10 @@
     UIImageView *shooterVw = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, 10, 10)];
     [ shooterVw setImage:shooterImg];
     [self.view addSubview:shooterVw];
-    [self a:shooterVw];
+    [self animateShooter:shooterVw];
 }
 
--(void) a: (UIImageView *) view
+-(void) animateShooter: (UIImageView *) view
 {
     if (view.frame.origin.y <= -10) {
         [view removeFromSuperview];
@@ -170,7 +183,7 @@
         BOOL temp = [self detectCollision:view];
         if (temp == true)
             return;
-        [self a:view];
+        [self animateShooter:view];
     }];
 }
 
@@ -184,12 +197,10 @@
     int tempPositionX, tempPositionY;
     NSInteger size = [self.enemiesOnScreen count];
     for (int i = 0; i < size; i++) {
-        
         temp = [self.enemiesOnScreen objectAtIndex:i];
         tempPositionX = temp.frame.origin.x;
         tempPositionY = temp.frame.origin.y;
-        //change based on image
-        if (tempPositionX >= x - 10 && tempPositionX <= x + 20 && tempPositionY >= y - 10 && tempPositionY <= y + 20) {
+        if (tempPositionX + 50 >= x && tempPositionX <= x && tempPositionY  + 50 >= y && tempPositionY <= y) {
             [shooter removeFromSuperview];
             [self.enemiesOnScreen removeObject:temp];
             [temp removeFromSuperview];
@@ -199,20 +210,19 @@
     return false;
 }
 
--(void) startIntro: (UIImageView *) e
+-(void) startIntro: (UIImageView *) earth
 {
     UILabel *count = [[UILabel alloc] initWithFrame:(CGRectMake(170, 150, 200, 200))];
     count.textColor = [UIColor whiteColor];
-    count.text = @"one";
     [count setFont:[UIFont boldSystemFontOfSize: 80]];
     [self.view addSubview:count];
     [self countDown:count at:@"1"];
-    CGPoint labelPosition = CGPointMake(e.frame.origin.x, 700);
+    CGPoint labelPosition = CGPointMake(earth.frame.origin.x, 700);
     [UIView animateWithDuration: 4 animations:^{
-        e.frame = CGRectMake( labelPosition.x , labelPosition.y , e.frame.size.width, e.frame.size.height);
+        earth.frame = CGRectMake( labelPosition.x , labelPosition.y , earth.frame.size.width, earth.frame.size.height);
     }
     completion:^(BOOL finished) {
-      
+        [earth removeFromSuperview];
                      }];
 }
 
@@ -229,8 +239,10 @@
             [self countDown:label at:@"2"];
         else if ([num isEqualToString: @"2"])
             [self countDown:label at:@"3"];
-        else
+        else {
+            [label removeFromSuperview];
             [self drawEnemies:[self.game startEnemies]];
+        }
     }];
 }
 
@@ -245,7 +257,11 @@
         ship.frame = CGRectMake( labelPosition.x , labelPosition.y , ship.frame.size.width, ship.frame.size.height);
     }
     completion:^(BOOL finished) {
-        [self hitShip:self.ship];
+        bool temp = [self hitShip:self.ship];
+        if (temp == true) {
+            [self endGame];
+            return;
+        }
         if (ship.frame.origin.x == 0) {
          //   if (SPEED > 0.004)
            //     SPEED = SPEED - 0.005;
@@ -260,7 +276,11 @@
 
 -(void) moveBackground: (UIImageView *) v1 and: (UIImageView *) v2
 {
-    
+    if (END == true) {
+        [v1 removeFromSuperview];
+        [v2 removeFromSuperview];
+        return;
+    }
     if (v1.frame.origin.y == 0)
         v2.frame = CGRectMake( 0 , -700 , v2.frame.size.width, v2.frame.size.height);
     else if (v2.frame.origin.y == 0)
