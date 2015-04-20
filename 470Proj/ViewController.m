@@ -54,10 +54,14 @@
     [self.view addSubview:e];
     [self startIntro: e];
     
-    UIImage *s = [UIImage imageNamed:@"ship1"];
     self.ship = [[UIImageView alloc] initWithFrame:CGRectMake( 160, 500, 100, 100)];
-    [self.ship setImage:s];
+    NSArray * shipImages = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"ship1"],[UIImage imageNamed:@"ship2"],[UIImage imageNamed:@"ship3"], nil];
+    self.ship.animationImages=shipImages;
+    self.ship.animationDuration=1;
+    self.ship.animationRepeatCount=0;
+    [self.ship startAnimating];
     [self.view addSubview:self.ship];
+
     [self osolateShip: self.ship at: 0];
     
     
@@ -66,14 +70,17 @@
  
 -(void) drawEnemies: (enemy *) enemyObject
 {
-        int p = enemyObject.position;
-        UIImage *enemyImg = [UIImage imageNamed:@"enemyship"];
-        UIImageView *enemyVw = [[UIImageView alloc] initWithFrame:CGRectMake( p, 0, 50, 50)];
-        [enemyVw setImage:enemyImg];
-        [self.view addSubview:enemyVw];
-        //add enemy to enemiesOnScreen
-        [self.enemiesOnScreen addObject:enemyVw];
-        [self createEnemy:enemyVw];
+    int p = enemyObject.position;
+    UIImageView *enemyVw = [[UIImageView alloc] initWithFrame:CGRectMake( p, 0, 50, 50)];
+    NSArray * enemyImages = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"enemyship1"],[UIImage imageNamed:@"enemyship2"],[UIImage imageNamed:@"enemyship3"], nil];
+    enemyVw.animationImages=enemyImages;
+    enemyVw.animationDuration=1;
+    enemyVw.animationRepeatCount=0;
+    [enemyVw startAnimating];
+    [self.view addSubview:enemyVw];
+    //add enemy to enemiesOnScreen
+    [self.enemiesOnScreen addObject:enemyVw];
+    [self createEnemy:enemyVw];
     
 }
 
@@ -99,7 +106,8 @@
         [[self.enemiesOnScreen objectAtIndex:i] removeFromSuperview];
     [self.enemiesOnScreen removeAllObjects];
     END = true;
-    [self.ship removeFromSuperview];
+    if([self.ship isDescendantOfView:self.view])
+        [self.ship removeFromSuperview];
     self.game = nil;
     EndGameView *endView = [[EndGameView alloc] init];
     [self.navigationController pushViewController:endView animated:YES];}
@@ -162,9 +170,12 @@
     int x = s.xCoord;
     int y = s.yCoord;
     
-    UIImage *shooterImg = [UIImage imageNamed:@"shipexpl1"];
     UIImageView *shooterVw = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, 10, 10)];
-    [ shooterVw setImage:shooterImg];
+    NSArray * shooterImages = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"projectile1"],[UIImage imageNamed:@"projectile2"], [UIImage imageNamed:@"projectile3"], nil];
+    shooterVw.animationImages=shooterImages;
+    shooterVw.animationDuration=1;
+    shooterVw.animationRepeatCount=0;
+    [shooterVw startAnimating];
     [self.view addSubview:shooterVw];
     [self animateShooter:shooterVw];
 }
@@ -259,7 +270,16 @@
     completion:^(BOOL finished) {
         bool temp = [self hitShip:self.ship];
         if (temp == true) {
-            [self endGame];
+            UIImageView * shipExplView = [[UIImageView alloc] initWithFrame:CGRectMake( ship.frame.origin.x, ship.frame.origin.y, 100, 100)];
+            NSArray * shipExplImages = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"shipexpl1"],[UIImage imageNamed:@"shipexpl2"],[UIImage imageNamed:@"shipexpl3"],[UIImage imageNamed:@"shipexpl4"],[UIImage imageNamed:@"shipexpl5"],[UIImage imageNamed:@"shipexpl6"], [UIImage imageNamed:@"shipexpl9"],[UIImage imageNamed:@"shipexpla"], nil];
+            shipExplView.animationImages=shipExplImages;
+            shipExplView.animationDuration=2;
+            shipExplView.animationRepeatCount=1;
+            [shipExplView startAnimating];
+            [self.ship removeFromSuperview];
+            [self.view addSubview:shipExplView];
+            [self performSelector:@selector(endGame) withObject:nil
+                       afterDelay:shipExplView.animationDuration];
             return;
         }
         if (ship.frame.origin.x == 0) {

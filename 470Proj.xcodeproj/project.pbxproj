@@ -39,7 +39,22 @@
 		D029306F1ADB53B40025749A /* earth_destrf.png in Resources */ = {isa = PBXBuildFile; fileRef = D029305D1ADB53B40025749A /* earth_destrf.png */; };
 		D02930701ADB53B40025749A /* earth_destrg.png in Resources */ = {isa = PBXBuildFile; fileRef = D029305E1ADB53B40025749A /* earth_destrg.png */; };
 		D02930711ADB53B40025749A /* earth_destrh.png in Resources */ = {isa = PBXBuildFile; fileRef = D029305F1ADB53B40025749A /* earth_destrh.png */; };
-		D02930731ADB57570025749A /* enemyship.png in Resources */ = {isa = PBXBuildFile; fileRef = D02930721ADB57570025749A /* enemyship.png */; };
+		D03590651AE4BF7300E38889 /* projectile1.png in Resources */ = {isa = PBXBuildFile; fileRef = D03590641AE4BF7300E38889 /* projectile1.png */; };
+		D03590671AE4BF9700E38889 /* projectile2.png in Resources */ = {isa = PBXBuildFile; fileRef = D03590661AE4BF9700E38889 /* projectile2.png */; };
+		D03590691AE4C06E00E38889 /* projectile3.png in Resources */ = {isa = PBXBuildFile; fileRef = D03590681AE4C06E00E38889 /* projectile3.png */; };
+		D035906D1AE4C4BE00E38889 /* enemyship1.png in Resources */ = {isa = PBXBuildFile; fileRef = D035906C1AE4C4BE00E38889 /* enemyship1.png */; };
+		D035906F1AE4C52100E38889 /* enemyship3.png in Resources */ = {isa = PBXBuildFile; fileRef = D035906E1AE4C52100E38889 /* enemyship3.png */; };
+		D03590711AE4C52800E38889 /* enemyship2.png in Resources */ = {isa = PBXBuildFile; fileRef = D03590701AE4C52800E38889 /* enemyship2.png */; };
+		D03590731AE4C5AD00E38889 /* enemyship.png in Resources */ = {isa = PBXBuildFile; fileRef = D03590721AE4C5AD00E38889 /* enemyship.png */; };
+		D03590831AE4CA4200E38889 /* shipexpl2.png in Resources */ = {isa = PBXBuildFile; fileRef = D035907A1AE4CA4200E38889 /* shipexpl2.png */; };
+		D03590841AE4CA4200E38889 /* shipexpl3.png in Resources */ = {isa = PBXBuildFile; fileRef = D035907B1AE4CA4200E38889 /* shipexpl3.png */; };
+		D03590851AE4CA4200E38889 /* shipexpl4.png in Resources */ = {isa = PBXBuildFile; fileRef = D035907C1AE4CA4200E38889 /* shipexpl4.png */; };
+		D03590861AE4CA4200E38889 /* shipexpl5.png in Resources */ = {isa = PBXBuildFile; fileRef = D035907D1AE4CA4200E38889 /* shipexpl5.png */; };
+		D03590871AE4CA4200E38889 /* shipexpl6.png in Resources */ = {isa = PBXBuildFile; fileRef = D035907E1AE4CA4200E38889 /* shipexpl6.png */; };
+		D03590881AE4CA4200E38889 /* shipexpl7.png in Resources */ = {isa = PBXBuildFile; fileRef = D035907F1AE4CA4200E38889 /* shipexpl7.png */; };
+		D03590891AE4CA4200E38889 /* shipexpl8.png in Resources */ = {isa = PBXBuildFile; fileRef = D03590801AE4CA4200E38889 /* shipexpl8.png */; };
+		D035908A1AE4CA4200E38889 /* shipexpl9.png in Resources */ = {isa = PBXBuildFile; fileRef = D03590811AE4CA4200E38889 /* shipexpl9.png */; };
+		D035908B1AE4CA4200E38889 /* shipexpla.png in Resources */ = {isa = PBXBuildFile; fileRef = D03590821AE4CA4200E38889 /* shipexpla.png */; };
 		D038B6081ADA454C0095218D /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D038B6071ADA454C0095218D /* TitleView.m */; };
 		D038B60B1ADA48650095218D /* EndGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = D038B60A1ADA48650095218D /* EndGameView.m */; };
 		D038B6231ADA4AC60095218D /* myearth.png in Resources */ = {isa = PBXBuildFile; fileRef = D038B6221ADA4AC60095218D /* myearth.png */; };
@@ -107,7 +122,22 @@
 		D029305D1ADB53B40025749A /* earth_destrf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_destrf.png; sourceTree = "<group>"; };
 		D029305E1ADB53B40025749A /* earth_destrg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_destrg.png; sourceTree = "<group>"; };
 		D029305F1ADB53B40025749A /* earth_destrh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_destrh.png; sourceTree = "<group>"; };
-		D02930721ADB57570025749A /* enemyship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyship.png; sourceTree = "<group>"; };
+		D03590641AE4BF7300E38889 /* projectile1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projectile1.png; sourceTree = "<group>"; };
+		D03590661AE4BF9700E38889 /* projectile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projectile2.png; sourceTree = "<group>"; };
+		D03590681AE4C06E00E38889 /* projectile3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projectile3.png; sourceTree = "<group>"; };
+		D035906C1AE4C4BE00E38889 /* enemyship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyship1.png; sourceTree = "<group>"; };
+		D035906E1AE4C52100E38889 /* enemyship3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyship3.png; sourceTree = "<group>"; };
+		D03590701AE4C52800E38889 /* enemyship2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyship2.png; sourceTree = "<group>"; };
+		D03590721AE4C5AD00E38889 /* enemyship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyship.png; sourceTree = "<group>"; };
+		D035907A1AE4CA4200E38889 /* shipexpl2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipexpl2.png; sourceTree = "<group>"; };
+		D035907B1AE4CA4200E38889 /* shipexpl3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipexpl3.png; sourceTree = "<group>"; };
+		D035907C1AE4CA4200E38889 /* shipexpl4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipexpl4.png; sourceTree = "<group>"; };
+		D035907D1AE4CA4200E38889 /* shipexpl5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipexpl5.png; sourceTree = "<group>"; };
+		D035907E1AE4CA4200E38889 /* shipexpl6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipexpl6.png; sourceTree = "<group>"; };
+		D035907F1AE4CA4200E38889 /* shipexpl7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipexpl7.png; sourceTree = "<group>"; };
+		D03590801AE4CA4200E38889 /* shipexpl8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipexpl8.png; sourceTree = "<group>"; };
+		D03590811AE4CA4200E38889 /* shipexpl9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipexpl9.png; sourceTree = "<group>"; };
+		D03590821AE4CA4200E38889 /* shipexpla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipexpla.png; sourceTree = "<group>"; };
 		D038B6061ADA45370095218D /* TitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleView.h; sourceTree = "<group>"; };
 		D038B6071ADA454C0095218D /* TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
 		D038B6091ADA48540095218D /* EndGameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EndGameView.h; sourceTree = "<group>"; };
@@ -189,42 +219,22 @@
 		354ACD911ACB5CA900F52C24 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D038B6401ADA688C0095218D /* asteroid1.png */,
-				D038B6411ADA688C0095218D /* asteroid2.png */,
-				D038B6421ADA688C0095218D /* asteroid3.png */,
-				D038B6431ADA688C0095218D /* asteroid4.png */,
+				354ACD931ACB5CA900F52C24 /* main.m */,
+				354ACD921ACB5CA900F52C24 /* Info.plist */,
 				3599FE461ACCC38F00437E2A /* background.png */,
-				D029304E1ADB53B40025749A /* earth_destr0.png */,
-				D029304F1ADB53B40025749A /* earth_destr1.png */,
-				D02930501ADB53B40025749A /* earth_destr2.png */,
-				D02930511ADB53B40025749A /* earth_destr3.png */,
-				D02930521ADB53B40025749A /* earth_destr4.png */,
-				D02930531ADB53B40025749A /* earth_destr5.png */,
-				D02930541ADB53B40025749A /* earth_destr6.png */,
-				D02930551ADB53B40025749A /* earth_destr7.png */,
-				D02930561ADB53B40025749A /* earth_destr8.png */,
-				D02930571ADB53B40025749A /* earth_destr9.png */,
-				D02930581ADB53B40025749A /* earth_destra.png */,
-				D02930591ADB53B40025749A /* earth_destrb.png */,
-				D029305A1ADB53B40025749A /* earth_destrc.png */,
-				D029305B1ADB53B40025749A /* earth_destrd.png */,
-				D029305C1ADB53B40025749A /* earth_destre.png */,
-				D029305D1ADB53B40025749A /* earth_destrf.png */,
-				D029305E1ADB53B40025749A /* earth_destrg.png */,
-				D029305F1ADB53B40025749A /* earth_destrh.png */,
 				3599FE441ACCC37A00437E2A /* earth.png */,
 				D038B62A1ADA58A90095218D /* endbutton.png */,
-				D02930721ADB57570025749A /* enemyship.png */,
-				354ACD921ACB5CA900F52C24 /* Info.plist */,
-				354ACD931ACB5CA900F52C24 /* main.m */,
+				D03590721AE4C5AD00E38889 /* enemyship.png */,
 				D038B63E1ADA65EF0095218D /* menubutton.png */,
 				D038B6221ADA4AC60095218D /* myearth.png */,
-				3F1DA0841AD3570100A75EDB /* ship1.png */,
-				D038B6441ADA688C0095218D /* ship2.png */,
-				D038B6451ADA688C0095218D /* ship3.png */,
-				3F1DA0851AD3570100A75EDB /* shipexpl1.png */,
 				D038B62E1ADA59E60095218D /* startbutton.png */,
 				D038B6241ADA53130095218D /* title.png */,
+				D03590751AE4C81D00E38889 /* asteroid */,
+				D03590741AE4C80800E38889 /* earth_destr */,
+				D03590761AE4C82A00E38889 /* enemyship */,
+				D03590781AE4C84700E38889 /* projectile */,
+				D03590771AE4C83F00E38889 /* ship */,
+				D03590791AE4C88400E38889 /* shipexpl */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -244,6 +254,89 @@
 				354ACDAC1ACB5CA900F52C24 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D03590741AE4C80800E38889 /* earth_destr */ = {
+			isa = PBXGroup;
+			children = (
+				D029304E1ADB53B40025749A /* earth_destr0.png */,
+				D029304F1ADB53B40025749A /* earth_destr1.png */,
+				D02930501ADB53B40025749A /* earth_destr2.png */,
+				D02930511ADB53B40025749A /* earth_destr3.png */,
+				D02930521ADB53B40025749A /* earth_destr4.png */,
+				D02930531ADB53B40025749A /* earth_destr5.png */,
+				D02930541ADB53B40025749A /* earth_destr6.png */,
+				D02930551ADB53B40025749A /* earth_destr7.png */,
+				D02930561ADB53B40025749A /* earth_destr8.png */,
+				D02930571ADB53B40025749A /* earth_destr9.png */,
+				D02930581ADB53B40025749A /* earth_destra.png */,
+				D02930591ADB53B40025749A /* earth_destrb.png */,
+				D029305A1ADB53B40025749A /* earth_destrc.png */,
+				D029305B1ADB53B40025749A /* earth_destrd.png */,
+				D029305C1ADB53B40025749A /* earth_destre.png */,
+				D029305D1ADB53B40025749A /* earth_destrf.png */,
+				D029305E1ADB53B40025749A /* earth_destrg.png */,
+				D029305F1ADB53B40025749A /* earth_destrh.png */,
+			);
+			name = earth_destr;
+			sourceTree = "<group>";
+		};
+		D03590751AE4C81D00E38889 /* asteroid */ = {
+			isa = PBXGroup;
+			children = (
+				D038B6401ADA688C0095218D /* asteroid1.png */,
+				D038B6411ADA688C0095218D /* asteroid2.png */,
+				D038B6421ADA688C0095218D /* asteroid3.png */,
+				D038B6431ADA688C0095218D /* asteroid4.png */,
+			);
+			name = asteroid;
+			sourceTree = "<group>";
+		};
+		D03590761AE4C82A00E38889 /* enemyship */ = {
+			isa = PBXGroup;
+			children = (
+				D035906C1AE4C4BE00E38889 /* enemyship1.png */,
+				D03590701AE4C52800E38889 /* enemyship2.png */,
+				D035906E1AE4C52100E38889 /* enemyship3.png */,
+			);
+			name = enemyship;
+			sourceTree = "<group>";
+		};
+		D03590771AE4C83F00E38889 /* ship */ = {
+			isa = PBXGroup;
+			children = (
+				3F1DA0841AD3570100A75EDB /* ship1.png */,
+				D038B6441ADA688C0095218D /* ship2.png */,
+				D038B6451ADA688C0095218D /* ship3.png */,
+			);
+			name = ship;
+			sourceTree = "<group>";
+		};
+		D03590781AE4C84700E38889 /* projectile */ = {
+			isa = PBXGroup;
+			children = (
+				D03590641AE4BF7300E38889 /* projectile1.png */,
+				D03590661AE4BF9700E38889 /* projectile2.png */,
+				D03590681AE4C06E00E38889 /* projectile3.png */,
+			);
+			name = projectile;
+			sourceTree = "<group>";
+		};
+		D03590791AE4C88400E38889 /* shipexpl */ = {
+			isa = PBXGroup;
+			children = (
+				3F1DA0851AD3570100A75EDB /* shipexpl1.png */,
+				D035907A1AE4CA4200E38889 /* shipexpl2.png */,
+				D035907B1AE4CA4200E38889 /* shipexpl3.png */,
+				D035907C1AE4CA4200E38889 /* shipexpl4.png */,
+				D035907D1AE4CA4200E38889 /* shipexpl5.png */,
+				D035907E1AE4CA4200E38889 /* shipexpl6.png */,
+				D035907F1AE4CA4200E38889 /* shipexpl7.png */,
+				D03590801AE4CA4200E38889 /* shipexpl8.png */,
+				D03590811AE4CA4200E38889 /* shipexpl9.png */,
+				D03590821AE4CA4200E38889 /* shipexpla.png */,
+			);
+			name = shipexpl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,7 +421,8 @@
 			files = (
 				D02930641ADB53B40025749A /* earth_destr4.png in Resources */,
 				3F1DA0871AD3570100A75EDB /* shipexpl1.png in Resources */,
-				D02930731ADB57570025749A /* enemyship.png in Resources */,
+				D03590671AE4BF9700E38889 /* projectile2.png in Resources */,
+				D03590651AE4BF7300E38889 /* projectile1.png in Resources */,
 				3599FE451ACCC37A00437E2A /* earth.png in Resources */,
 				3F1DA0861AD3570100A75EDB /* ship1.png in Resources */,
 				D02930711ADB53B40025749A /* earth_destrh.png in Resources */,
@@ -336,16 +430,23 @@
 				D029306E1ADB53B40025749A /* earth_destre.png in Resources */,
 				D029306B1ADB53B40025749A /* earth_destrb.png in Resources */,
 				D029306C1ADB53B40025749A /* earth_destrc.png in Resources */,
+				D03590851AE4CA4200E38889 /* shipexpl4.png in Resources */,
 				D038B63F1ADA65EF0095218D /* menubutton.png in Resources */,
+				D035908A1AE4CA4200E38889 /* shipexpl9.png in Resources */,
 				3599FE471ACCC38F00437E2A /* background.png in Resources */,
 				D02930601ADB53B40025749A /* earth_destr0.png in Resources */,
+				D03590891AE4CA4200E38889 /* shipexpl8.png in Resources */,
+				D03590881AE4CA4200E38889 /* shipexpl7.png in Resources */,
 				D038B6461ADA688C0095218D /* asteroid1.png in Resources */,
 				D02930621ADB53B40025749A /* earth_destr2.png in Resources */,
 				D038B6481ADA688C0095218D /* asteroid3.png in Resources */,
 				D02930631ADB53B40025749A /* earth_destr3.png in Resources */,
+				D035908B1AE4CA4200E38889 /* shipexpla.png in Resources */,
+				D03590871AE4CA4200E38889 /* shipexpl6.png in Resources */,
 				354ACD9D1ACB5CA900F52C24 /* Main.storyboard in Resources */,
 				D02930611ADB53B40025749A /* earth_destr1.png in Resources */,
 				D02930681ADB53B40025749A /* earth_destr8.png in Resources */,
+				D03590861AE4CA4200E38889 /* shipexpl5.png in Resources */,
 				D02930651ADB53B40025749A /* earth_destr5.png in Resources */,
 				D02930661ADB53B40025749A /* earth_destr6.png in Resources */,
 				D038B6251ADA53130095218D /* title.png in Resources */,
@@ -353,12 +454,19 @@
 				D038B62B1ADA58A90095218D /* endbutton.png in Resources */,
 				D038B6471ADA688C0095218D /* asteroid2.png in Resources */,
 				354ACDA21ACB5CA900F52C24 /* LaunchScreen.xib in Resources */,
+				D03590731AE4C5AD00E38889 /* enemyship.png in Resources */,
+				D035906D1AE4C4BE00E38889 /* enemyship1.png in Resources */,
 				D038B62F1ADA59E60095218D /* startbutton.png in Resources */,
+				D03590831AE4CA4200E38889 /* shipexpl2.png in Resources */,
+				D03590691AE4C06E00E38889 /* projectile3.png in Resources */,
+				D03590711AE4C52800E38889 /* enemyship2.png in Resources */,
 				D02930691ADB53B40025749A /* earth_destr9.png in Resources */,
 				D038B64B1ADA688C0095218D /* ship3.png in Resources */,
+				D035906F1AE4C52100E38889 /* enemyship3.png in Resources */,
 				D038B6491ADA688C0095218D /* asteroid4.png in Resources */,
 				D038B6231ADA4AC60095218D /* myearth.png in Resources */,
 				D038B64A1ADA688C0095218D /* ship2.png in Resources */,
+				D03590841AE4CA4200E38889 /* shipexpl3.png in Resources */,
 				D029306D1ADB53B40025749A /* earth_destrd.png in Resources */,
 				354ACD9F1ACB5CA900F52C24 /* Images.xcassets in Resources */,
 				D02930671ADB53B40025749A /* earth_destr7.png in Resources */,
