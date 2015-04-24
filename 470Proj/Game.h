@@ -20,5 +20,8 @@
 -(enemy *) startEnemies;
 -(enemy *) returnEnemyAtIndex: (int) ind;
 -(shooter *) startShooter: (int) a and: (int) b;
+-(void) increasePowerLevel;
+-(void) decrementPowerLevel;
+-(int) getPowerLevel;
 
 @end

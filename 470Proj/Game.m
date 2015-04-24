@@ -12,7 +12,7 @@
 #import "shooter.h"
 
 @interface Game() {
-    
+    int powerLevel;
 }
 
 @property (nonatomic) NSMutableArray * enemyArr;
@@ -22,11 +22,30 @@
 @implementation Game
 
 -(id) initGame {
-    
+    powerLevel = 6;
     if( (self = [super init]) == nil )
         return nil;
     return self;
     
+}
+
+-(void) increasePowerLevel
+{
+    if (powerLevel >= 6)
+        return;
+    powerLevel += 1;
+}
+
+-(void) decrementPowerLevel
+{
+    if (powerLevel <= 0)
+        return;
+    powerLevel = powerLevel - 1;
+}
+
+-(int) getPowerLevel
+{
+    return powerLevel;
 }
 
 -(enemy *) startEnemies

@@ -14,12 +14,16 @@
 @interface ViewController () {
     float SPEED;
     bool END;
+    int time;
     
 }
 
 @property (nonatomic) Game * game;
 @property (nonatomic) NSMutableArray * enemiesOnScreen;
 @property (nonatomic) UIImageView * ship;
+@property (nonatomic) UITextView * myTimerLabel;
+@property (nonatomic) NSArray * powerMeter;
+
 
 @end
 
@@ -33,7 +37,8 @@
     [self.view addGestureRecognizer:tapHandler];
     self.enemiesOnScreen = [[NSMutableArray alloc] init];
     self.game = [[Game alloc] initGame];
-    SPEED = 0.015;
+    time = 0;
+    SPEED = 0.02;
     END = false;
     UIImage *bk1 = [UIImage imageNamed:@"background"];
     UIImageView *v1 = [[UIImageView alloc] initWithFrame: CGRectMake(0, -700, 400, 700)];
@@ -61,13 +66,65 @@
     self.ship.animationRepeatCount=0;
     [self.ship startAnimating];
     [self.view addSubview:self.ship];
+    
+    self.myTimerLabel = [[UITextView alloc] initWithFrame:CGRectMake( 60, 30, 400, 120)];
+    self.myTimerLabel.textColor = [UIColor whiteColor];
+    [self.myTimerLabel setFont: [UIFont systemFontOfSize: 100 ]];
+    self.myTimerLabel.text = @"00:00";
+    self.myTimerLabel.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
+    [self.view addSubview:self.myTimerLabel];
+    UIImageView * p1 = [[UIImageView alloc] init];
+    UIImageView * p2 = [[UIImageView alloc] init];
+    UIImageView * p3 = [[UIImageView alloc] init];
+    UIImageView * p4 = [[UIImageView alloc] init];
+    UIImageView * p5 = [[UIImageView alloc] init];
+    UIImageView * p6 = [[UIImageView alloc] init];
+    self.powerMeter = [[NSArray alloc] initWithObjects:p6, p5, p4, p3, p2, p1, nil];
+    [self setPowerViews:self.powerMeter];
 
+    
     [self osolateShip: self.ship at: 0];
+    
     
     
 }
 
- 
+                            
+-(void) setPowerViews: (NSArray *) arr
+{
+    UIImageView * view;
+    for (int i = 0; i < [arr count]; i++) {
+        view = [arr objectAtIndex: i];
+        [view setFrame: CGRectMake(310, 650 - (i * 12), 50, 10)];
+        view.backgroundColor = [UIColor greenColor];
+        [self.view addSubview:view];
+    }
+}
+
+-(void) increasePowerView: (UIImageView *) view
+{
+    [view setAlpha: 1];
+}
+
+- (void) timerTick:(NSTimer *)timer
+{
+    if ([self.game getPowerLevel] < 6) {
+        [self.game increasePowerLevel];
+        [self increasePowerView: [self.powerMeter objectAtIndex:[self.game getPowerLevel] -1]];
+    }
+    time += 1;
+    int min = time / 60;
+    int sec = time % 60;
+    if (min < 10 && sec < 10)
+        self.myTimerLabel.text = [NSString stringWithFormat:@"0%i:0%i", min,sec];
+    else if (min < 10)
+        self.myTimerLabel.text = [NSString stringWithFormat:@"0%i:%i", min,sec];
+    else if (sec < 10)
+        self.myTimerLabel.text = [NSString stringWithFormat:@"%i:0%i", min,sec];
+    else
+        self.myTimerLabel.text = [NSString stringWithFormat:@"%i:%i", min,sec];
+}
+
 -(void) drawEnemies: (enemy *) enemyObject
 {
     int p = enemyObject.position;
@@ -156,13 +213,21 @@
 
 -(void) handleTap: (UIGestureRecognizer *) sender
 {
-    if (sender.state == UIGestureRecognizerStateEnded) {
+    if (sender.state == UIGestureRecognizerStateEnded && [self.game getPowerLevel] > 0) {
         int x = self.ship.frame.origin.x + 50;
         int y = self.ship.frame.origin.y;
         shooter * s = [self.game startShooter:x and:y];
+        
+        [self.game decrementPowerLevel];
+        [self decrementPowerView: [self.powerMeter objectAtIndex:[self.game getPowerLevel]]];
         [self drawShooter: s];
     }
     
+}
+
+-(void) decrementPowerView: (UIImageView *) view
+{
+    [view setAlpha: 0];
 }
 
 -(void) drawShooter: (shooter *) s
@@ -228,20 +293,21 @@
     [count setFont:[UIFont boldSystemFontOfSize: 80]];
     [self.view addSubview:count];
     [self countDown:count at:@"1"];
-    CGPoint labelPosition = CGPointMake(earth.frame.origin.x, 700);
-    [UIView animateWithDuration: 4 animations:^{
+    CGPoint labelPosition = CGPointMake(earth.frame.origin.x, 650);
+    [UIView animateWithDuration: 3 animations:^{
         earth.frame = CGRectMake( labelPosition.x , labelPosition.y , earth.frame.size.width, earth.frame.size.height);
     }
     completion:^(BOOL finished) {
         [earth removeFromSuperview];
-                     }];
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
+    }];
 }
 
 -(void) countDown: (UILabel *) label at: (NSString *) num
 {
     label.text = num;
     [label setAlpha: 1];
-    [UIView animateWithDuration: 1.3 animations:^{
+    [UIView animateWithDuration: 1 animations:^{
         [label setAlpha:0.9];
     }
     completion:^(BOOL finished) {
@@ -283,8 +349,8 @@
             return;
         }
         if (ship.frame.origin.x == 0) {
-         //   if (SPEED > 0.004)
-           //     SPEED = SPEED - 0.005;
+        //    if (SPEED > 0.002)
+        //        SPEED = SPEED - 0.004;
             [self osolateShip: ship at: 270];
         }
         else if (ship.frame.origin.x == 270)
