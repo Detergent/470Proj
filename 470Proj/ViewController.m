@@ -2,7 +2,7 @@
 //  ViewController.m
 //  470Proj
 //
-//  Created by Helen San on 3/31/15.
+//  Created by Helen San, Brandon Mondo, Justin Guarino on 3/31/15.
 //  Copyright (c) 2015 SSU. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
     float SPEED;
     bool END;
     int time;
+    int totalOscillations;
     
 }
 
@@ -162,12 +163,17 @@
     for (int i = 0; i < size; i++)
         [[self.enemiesOnScreen objectAtIndex:i] removeFromSuperview];
     [self.enemiesOnScreen removeAllObjects];
+    for (int i = 0; i < [self.powerMeter count]; i++)
+        [[self.powerMeter objectAtIndex:i] removeFromSuperview];
+    self.powerMeter = nil;
     END = true;
     if([self.ship isDescendantOfView:self.view])
         [self.ship removeFromSuperview];
     self.game = nil;
     EndGameView *endView = [[EndGameView alloc] init];
-    [self.navigationController pushViewController:endView animated:YES];}
+    [self.navigationController pushViewController:endView animated:YES];
+
+}
 
 -(void) animateEnemy: (UIImageView *) view
 {
@@ -349,8 +355,12 @@
             return;
         }
         if (ship.frame.origin.x == 0) {
-        //    if (SPEED > 0.002)
-        //        SPEED = SPEED - 0.004;
+            totalOscillations +=1;
+            if (SPEED > 0.002 && totalOscillations >= 5)
+            {
+                SPEED = SPEED - 0.002;
+                totalOscillations -= 5;
+            }
             [self osolateShip: ship at: 270];
         }
         else if (ship.frame.origin.x == 270)
