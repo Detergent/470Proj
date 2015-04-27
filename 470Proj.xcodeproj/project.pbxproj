@@ -68,6 +68,9 @@
 		D038B6491ADA688C0095218D /* asteroid4.png in Resources */ = {isa = PBXBuildFile; fileRef = D038B6431ADA688C0095218D /* asteroid4.png */; };
 		D038B64A1ADA688C0095218D /* ship2.png in Resources */ = {isa = PBXBuildFile; fileRef = D038B6441ADA688C0095218D /* ship2.png */; };
 		D038B64B1ADA688C0095218D /* ship3.png in Resources */ = {isa = PBXBuildFile; fileRef = D038B6451ADA688C0095218D /* ship3.png */; };
+		D06E94521AEDFCF3008E9E76 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06E94511AEDFCF3008E9E76 /* AVFoundation.framework */; };
+		D06E94541AEDFD0E008E9E76 /* EarthDefenderMenuLoop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D06E94531AEDFD0E008E9E76 /* EarthDefenderMenuLoop.mp3 */; };
+		D06E94561AEDFFD6008E9E76 /* EarthDefenderFull.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D06E94551AEDFFD6008E9E76 /* EarthDefenderFull.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +156,9 @@
 		D038B6431ADA688C0095218D /* asteroid4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid4.png; sourceTree = "<group>"; };
 		D038B6441ADA688C0095218D /* ship2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship2.png; sourceTree = "<group>"; };
 		D038B6451ADA688C0095218D /* ship3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship3.png; sourceTree = "<group>"; };
+		D06E94511AEDFCF3008E9E76 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D06E94531AEDFD0E008E9E76 /* EarthDefenderMenuLoop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = EarthDefenderMenuLoop.mp3; sourceTree = "<group>"; };
+		D06E94551AEDFFD6008E9E76 /* EarthDefenderFull.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = EarthDefenderFull.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D06E94521AEDFCF3008E9E76 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +183,7 @@
 		354ACD851ACB5CA900F52C24 = {
 			isa = PBXGroup;
 			children = (
+				D06E94511AEDFCF3008E9E76 /* AVFoundation.framework */,
 				354ACD901ACB5CA900F52C24 /* 470Proj */,
 				354ACDAA1ACB5CA900F52C24 /* 470ProjTests */,
 				354ACD8F1ACB5CA900F52C24 /* Products */,
@@ -229,6 +237,8 @@
 				D038B6221ADA4AC60095218D /* myearth.png */,
 				D038B62E1ADA59E60095218D /* startbutton.png */,
 				D038B6241ADA53130095218D /* title.png */,
+				D06E94531AEDFD0E008E9E76 /* EarthDefenderMenuLoop.mp3 */,
+				D06E94551AEDFFD6008E9E76 /* EarthDefenderFull.mp3 */,
 				D03590751AE4C81D00E38889 /* asteroid */,
 				D03590741AE4C80800E38889 /* earth_destr */,
 				D03590761AE4C82A00E38889 /* enemyship */,
@@ -440,6 +450,7 @@
 				D038B6461ADA688C0095218D /* asteroid1.png in Resources */,
 				D02930621ADB53B40025749A /* earth_destr2.png in Resources */,
 				D038B6481ADA688C0095218D /* asteroid3.png in Resources */,
+				D06E94561AEDFFD6008E9E76 /* EarthDefenderFull.mp3 in Resources */,
 				D02930631ADB53B40025749A /* earth_destr3.png in Resources */,
 				D035908B1AE4CA4200E38889 /* shipexpla.png in Resources */,
 				D03590871AE4CA4200E38889 /* shipexpl6.png in Resources */,
@@ -453,6 +464,7 @@
 				D029306F1ADB53B40025749A /* earth_destrf.png in Resources */,
 				D038B62B1ADA58A90095218D /* endbutton.png in Resources */,
 				D038B6471ADA688C0095218D /* asteroid2.png in Resources */,
+				D06E94541AEDFD0E008E9E76 /* EarthDefenderMenuLoop.mp3 in Resources */,
 				354ACDA21ACB5CA900F52C24 /* LaunchScreen.xib in Resources */,
 				D03590731AE4C5AD00E38889 /* enemyship.png in Resources */,
 				D035906D1AE4C4BE00E38889 /* enemyship1.png in Resources */,

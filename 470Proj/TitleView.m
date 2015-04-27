@@ -9,6 +9,7 @@
 #import "TitleView.h"
 #import "ViewController.h"
 #import "EndGameView.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface TitleView () {
     
@@ -16,6 +17,7 @@
 
 @property (nonatomic) UIButton *startButton;
 @property (nonatomic) UIButton *endButton;
+@property (nonatomic) AVAudioPlayer *bgm;
 
 @end
 
@@ -65,6 +67,16 @@
     [self.endButton addTarget:self action:@selector(pressedEnd) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.endButton];
     
+    NSString *musicLoc = [NSString stringWithFormat:@"%@/EarthDefenderMenuLoop.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *musicURL = [NSURL fileURLWithPath:musicLoc];
+    self.bgm = [[AVAudioPlayer alloc] initWithContentsOfURL:musicURL error:nil];
+    self.bgm.numberOfLoops=-1;
+    [self.bgm play];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self.bgm play];
 }
 
 -(void) moveBackground: (UIImageView *) v1 and: (UIImageView *) v2
@@ -88,6 +100,7 @@
 
 -(void) pressedStart
 {
+    [self.bgm stop];
     ViewController *viewCont = [[ViewController alloc] init];
     [self.navigationController pushViewController:viewCont animated:YES];
 }

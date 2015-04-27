@@ -10,6 +10,7 @@
 #import "enemy.h"
 #import "Game.h"
 #import "EndGameView.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController () {
     float SPEED;
@@ -24,7 +25,7 @@
 @property (nonatomic) UIImageView * ship;
 @property (nonatomic) UITextView * myTimerLabel;
 @property (nonatomic) NSArray * powerMeter;
-
+@property (nonatomic) AVAudioPlayer *bgm;
 
 @end
 
@@ -86,7 +87,10 @@
     
     [self osolateShip: self.ship at: 0];
     
-    
+    NSString *musicLoc = [NSString stringWithFormat:@"%@/EarthDefenderFull.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *musicURL = [NSURL fileURLWithPath:musicLoc];
+    self.bgm = [[AVAudioPlayer alloc] initWithContentsOfURL:musicURL error:nil];
+    self.bgm.numberOfLoops=-1;
     
 }
 
@@ -171,6 +175,7 @@
         [self.ship removeFromSuperview];
     self.game = nil;
     EndGameView *endView = [[EndGameView alloc] init];
+    [self.bgm stop];
     [self.navigationController pushViewController:endView animated:YES];
 
 }
@@ -306,6 +311,7 @@
     completion:^(BOOL finished) {
         [earth removeFromSuperview];
         [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
+        [self.bgm play];
     }];
 }
 
