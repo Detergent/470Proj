@@ -163,6 +163,7 @@
 
 -(void) endGame
 {
+
     NSInteger size = [self.enemiesOnScreen count];
     for (int i = 0; i < size; i++)
         [[self.enemiesOnScreen objectAtIndex:i] removeFromSuperview];
@@ -174,7 +175,7 @@
     if([self.ship isDescendantOfView:self.view])
         [self.ship removeFromSuperview];
     self.game = nil;
-    EndGameView *endView = [[EndGameView alloc] init];
+    EndGameView *endView = [[EndGameView alloc] initWithScore:time print:self.myTimerLabel.text];
     [self.bgm stop];
     [self.navigationController pushViewController:endView animated:YES];
 

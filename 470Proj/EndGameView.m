@@ -7,22 +7,35 @@
 //
 
 #import "EndGameView.h"
+#import "HighScoreView.h"
 
 @interface EndGameView () {
-    
+    int scoreInt;
+    NSString * scoreStr;
 }
 
 @property (nonatomic) IBOutlet UIImageView *iV;
 @property (nonatomic) NSArray *images;
-@property (nonatomic) UIButton *menuButton;
+//@property (nonatomic) UIButton *menuButton;
+@property (nonatomic) IBOutlet UITextField *tf;
+@property (nonatomic) IBOutlet UIButton *scoreButton;
+
 
 @end
 
 @implementation EndGameView : UIViewController
 
+-(id) initWithScore: (int) score print: (NSString *) text
+{
+    if( (self = [super init]) == nil )
+        return nil;
+    scoreInt = score;
+    scoreStr = text;
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     UIImage *backgroundImage = [UIImage imageNamed:@"background"];
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, 400, 700)];
     [backgroundView setImage:backgroundImage];
@@ -41,11 +54,18 @@
     [self.view addSubview:animView];
     [self performSelector:@selector(animFinished) withObject:nil
                afterDelay:animView.animationDuration];
+    
 }
+
+
+
 
 -(void)animFinished
 {
-    UIImage *startButtonImage = [UIImage imageNamed:@"menubutton"];
+    HighScoreView *highscoreView = [[HighScoreView alloc] init];
+    [highscoreView setScore: scoreInt print:scoreStr];
+    [self.navigationController pushViewController:highscoreView animated:YES];
+    /*UIImage *startButtonImage = [UIImage imageNamed:@"menubutton"];
     UIImageView *start = [[UIImageView alloc] initWithFrame:CGRectMake(110, 200, 150, 50)];
     [start setImage:startButtonImage];
     
@@ -53,13 +73,13 @@
     
     self.menuButton = [[UIButton alloc] initWithFrame:CGRectMake(110, 200, 150, 50)];
     [self.menuButton addTarget:self action:@selector(pressedMenu) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.menuButton];
+    [self.view addSubview:self.menuButton];*/
 }
-
+/*
 -(void)pressedMenu
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
-}
+}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

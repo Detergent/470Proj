@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface EndGameView : UIViewController
 
+-(id) initWithScore: (int) score print:(NSString *) text;
 
 @end

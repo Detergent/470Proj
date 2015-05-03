@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "EndGameView.h"
 #import <AVFoundation/AVFoundation.h>
+#import <Parse/Parse.h>
 
 @interface TitleView () {
     
@@ -25,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     UIImage *bk1 = [UIImage imageNamed:@"background"];
     UIImageView *v1 = [[UIImageView alloc] initWithFrame: CGRectMake(0, -700, 400, 700)];

@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-
 #import "TitleView.h"
 
 @interface AppDelegate ()
@@ -23,8 +22,18 @@
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:tvc];
     nvc.navigationBarHidden=YES;
     [self.window setRootViewController:nvc];
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"TwG1FWNOh43URqo5FSAS8jO1ApDAkzndIKrrvQwN"
+                  clientKey:@"ejRErApMSnOqkCDq0Chv7UNNT1iNHxyCeEEqnFI9"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
