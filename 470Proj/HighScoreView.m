@@ -63,6 +63,9 @@
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
+    NSInteger rowOfTheCell = [indexPath row];
+    rowOfTheCell += 1;
+    NSString * temp = [NSString stringWithFormat:@"%li", rowOfTheCell];
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -70,9 +73,13 @@
     }
     NSString * score = [object objectForKey:@"score"];
     NSString * username = [object objectForKey:@"username"];
-    cell.textLabel.text = username;
+    temp = [temp stringByAppendingString:@". "];
+    temp = [temp stringByAppendingString:username];
+    cell.textLabel.text = temp;
     cell.detailTextLabel.text = score;
     cell.textLabel.textColor = [UIColor blackColor];
+    
+    
     return cell;
 }
 
@@ -121,6 +128,7 @@
     scoreObject[@"scoreInt"] = @(scoreInt);
     scoreObject[@"score"] = scoreStr;
     [scoreObject saveInBackground];
+    [self loadObjects];
 }
 
 
