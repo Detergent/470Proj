@@ -65,6 +65,8 @@
     HighScoreView *highscoreView = [[HighScoreView alloc] init];
     [highscoreView setScore: scoreInt print:scoreStr];
     [self.navigationController pushViewController:highscoreView animated:YES];
+    
+    // Moved this code to HighScoreView
     /*UIImage *startButtonImage = [UIImage imageNamed:@"menubutton"];
     UIImageView *start = [[UIImageView alloc] initWithFrame:CGRectMake(110, 200, 150, 50)];
     [start setImage:startButtonImage];

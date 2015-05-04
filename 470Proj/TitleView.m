@@ -74,7 +74,6 @@
     self.bgm = [[AVAudioPlayer alloc] initWithContentsOfURL:musicURL error:nil];
     self.bgm.numberOfLoops=-1;
     [self.bgm play];
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
